@@ -7,6 +7,7 @@ export const ProductContext = createContext({});
 
 export function ProductProvider(props) {
   const [products, setProducts] = useState([]);
+  const [productArray, setProductArray] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:3001/products").then((response) => {
       const productFormatted = response.data.map((product) => {
@@ -23,7 +24,7 @@ export function ProductProvider(props) {
   }, []);
 
   return (
-    <ProductContext.Provider value={{ products }}>
+    <ProductContext.Provider value={{ products, productArray }}>
       {props.children}
     </ProductContext.Provider>
   );

@@ -136,9 +136,19 @@ export function CartProvider(props) {
       console.log(e);
     }
   }
+
+  function disableArrow(product) {
+    return product.quantity;
+  }
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, removeProduct, updateProductQuantity }}
+      value={{
+        cart,
+        addProduct,
+        removeProduct,
+        updateProductQuantity,
+        disableArrow,
+      }}
     >
       {props.children}
     </CartContext.Provider>

@@ -1,0 +1,22 @@
+{
+  "name": "frontend-test-mission",
+  "version": "1.0.0",
+  "description": "Esta é uma missão inicial para teste de suas habilidades Jedi com React e React native",
+  "main": "index.js",
+  "scripts": {
+    "api": "json-server --watch mock/product.json --port 3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keviocastro/frontend-test-mission.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keviocastro/frontend-test-mission/issues"
+  },
+  "homepage": "https://github.com/keviocastro/frontend-test-mission#readme",
+  "dependencies": {
+    "json-server": "^0.16.1"
+  }
+}
