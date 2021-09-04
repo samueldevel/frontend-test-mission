@@ -135,7 +135,7 @@ export function CartProducts() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {cartFormatted.map((cartItem) => (
+            {cartFormatted.map((cartItem, index) => (
               <TableRow key={cartItem.id}>
                 <TableCell>
                   <img
@@ -176,7 +176,6 @@ export function CartProducts() {
                       <Input value={cartItem.quantity} readOnly />
                     </Box>
                     <IconButton
-                      disabled={cartItem.quantity == 10}
                       color="primary"
                       aria-label="return product"
                       onClick={() => handleProductIncrement(cartItem)}
