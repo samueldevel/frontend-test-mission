@@ -9,7 +9,7 @@
       "memory": "32GB",
       "brand": "Motorola",
       "chipType": "Nano Chip",
-      "quantity": 6
+      "quantity": 8
     },
     {
       "id": 132537782,
@@ -20,7 +20,7 @@
       "memory": "64GB",
       "brand": "Samsung",
       "chipType": "Nano Chip",
-      "quantity": 4
+      "quantity": 6
     },
     {
       "id": 133453169,
@@ -53,7 +53,7 @@
       "memory": "32GB",
       "brand": "LG",
       "chipType": "Nano Chip",
-      "quantity": 8
+      "quantity": 4
     },
     {
       "id": 123439902,
@@ -64,7 +64,7 @@
       "memory": "16GB",
       "brand": "LG",
       "chipType": "Micro Chip",
-      "quantity": 0
+      "quantity": 9
     },
     {
       "id": 129712316,
@@ -86,7 +86,7 @@
       "memory": "16GB",
       "brand": "Lenovo",
       "chipType": "Micro Chip",
-      "quantity": 4
+      "quantity": 15
     }
   ]
 }

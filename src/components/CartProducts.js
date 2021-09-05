@@ -69,13 +69,14 @@ const useStyles = makeStyles((theme) => ({
 export function CartProducts() {
   const classes = useStyles();
   const { cart, removeProduct, updateProductQuantity } = useCart();
-
+  const { products } = useProduct();
   function handleRemoveProduct(id) {
     removeProduct(id);
   }
 
   function handleProductIncrement(product) {
     updateProductQuantity(product.id, product.quantity + 1);
+    console.log();
   }
 
   function handleProductDecrement(product) {
@@ -175,7 +176,6 @@ export function CartProducts() {
                       <Input value={cartItem.quantity} readOnly />
                     </Box>
                     <IconButton
-                      disabled={cartItem.quantity === cart[index].quantity}
                       color="primary"
                       aria-label="return product"
                       onClick={() => handleProductIncrement(cartItem)}

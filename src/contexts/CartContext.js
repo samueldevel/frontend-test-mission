@@ -105,11 +105,10 @@ export function CartProvider(props) {
       }
 
       const productQuantity = product.quantity;
-      const stockIsAvailable = quantity < productQuantity;
+      const stockIsAvailable = quantity <= productQuantity;
 
       if (!stockIsAvailable) {
         console.log("Quantidade solicitada fora do estoque");
-
         return;
       }
 
@@ -137,9 +136,6 @@ export function CartProvider(props) {
     }
   }
 
-  function disableArrow(product) {
-    return product.quantity;
-  }
   return (
     <CartContext.Provider
       value={{
@@ -147,7 +143,6 @@ export function CartProvider(props) {
         addProduct,
         removeProduct,
         updateProductQuantity,
-        disableArrow,
       }}
     >
       {props.children}
