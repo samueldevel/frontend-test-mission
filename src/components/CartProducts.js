@@ -18,7 +18,6 @@ import {
   Button,
 } from "@material-ui/core";
 import { useCart } from "../hooks/useCart";
-import { useProduct } from "../hooks/useProduct";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -69,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
 export function CartProducts() {
   const classes = useStyles();
   const { cart, removeProduct, updateProductQuantity } = useCart();
-  const { products } = useProduct();
   function handleRemoveProduct(id) {
     removeProduct(id);
   }

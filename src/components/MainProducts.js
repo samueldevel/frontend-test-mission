@@ -7,10 +7,11 @@ import {
   Typography,
   IconButton,
   Paper,
+  Link,
 } from "@material-ui/core";
 import { useCart } from "../hooks/useCart";
 import { useProduct } from "../hooks/useProduct";
-import { Link } from "@material-ui/core";
+import { useModal } from "../hooks/useModal";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -48,12 +49,32 @@ const useStyles = makeStyles((theme) => ({
   iconCart: {
     marginRight: 40,
   },
+  cardImg: {
+    height: 300,
+    width: 300,
+  },
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
 export function MainProducts() {
+  const classes = useStyles();
   const { products } = useProduct();
   const { addProduct } = useCart();
-  const classes = useStyles();
+  const { openModal } = useModal();
+
+  function handleOpenModal(productId) {
+    openModal(productId);
+  }
 
   function handleTitleProduct(product) {
     if (product.length > 70) {
@@ -74,7 +95,11 @@ export function MainProducts() {
           <Grid key={product.id} item lg={3} md={4} sm={6} xs={12}>
             <Paper elevation={3} className={classes.product}>
               <abbr style={{ textDecoration: "none" }} title={product.title}>
-                <Link underline="none" href="# ">
+                <Link
+                  onClick={() => handleOpenModal(product.id)}
+                  underline="none"
+                  style={{ cursor: "pointer" }}
+                >
                   <img
                     className={classes.imgProduct}
                     src={product.picture}
