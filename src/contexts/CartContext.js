@@ -27,10 +27,38 @@ export function CartProvider(props) {
       if (!productAlreadyInCart) {
         const stock = product.quantity;
         if (stock > 0) {
-          setCart([...cart, { ...product, quantity: 1 }]);
+          setCart([
+            ...cart,
+            {
+              ...product,
+              quantity: 1,
+              titleFormatted: `${product.title.substring(0, 40)} ... `,
+              priceFormatted: parseFloat(product.price).toLocaleString(
+                "pt-br",
+                {
+                  style: "currency",
+                  currency: "BRL",
+                }
+              ),
+            },
+          ]);
           localStorage.setItem(
             "@DevMart:cart",
-            JSON.stringify([...cart, { ...product, quantity: 1 }])
+            JSON.stringify([
+              ...cart,
+              {
+                ...product,
+                quantity: 1,
+                titleFormatted: `${product.title.substring(0, 40)} ... `,
+                priceFormatted: parseFloat(product.price).toLocaleString(
+                  "pt-br",
+                  {
+                    style: "currency",
+                    currency: "BRL",
+                  }
+                ),
+              },
+            ])
           );
           console.log("item colocado no carrinho com sucesso");
           return;
@@ -140,6 +168,7 @@ export function CartProvider(props) {
     <CartContext.Provider
       value={{
         cart,
+        setCart,
         addProduct,
         removeProduct,
         updateProductQuantity,

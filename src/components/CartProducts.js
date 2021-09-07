@@ -2,6 +2,8 @@ import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import DeleteIcon from "@material-ui/icons/Delete";
 
+import { useHistory } from "react-router-dom";
+
 import {
   Box,
   Input,
@@ -67,6 +69,13 @@ const useStyles = makeStyles((theme) => ({
 
 export function CartProducts() {
   const classes = useStyles();
+
+  const history = useHistory();
+
+  function handleNavigationToPage(pageRouter) {
+    history.push(`${pageRouter}`);
+  }
+
   const { cart, removeProduct, updateProductQuantity } = useCart();
   function handleRemoveProduct(id) {
     removeProduct(id);
@@ -83,10 +92,7 @@ export function CartProducts() {
 
   const cartFormatted = cart.map((product) => ({
     ...product,
-    priceFormatted: parseFloat(product.price).toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    }),
+
     subTotal: parseFloat(product.price * product.quantity).toLocaleString(
       "pt-br",
       {
@@ -94,7 +100,6 @@ export function CartProducts() {
         currency: "BRL",
       }
     ),
-    titleFormatted: `${product.title.substring(0, 30)} ...`,
   }));
 
   const totalPrice = cartFormatted.reduce((sumTotal, product) => {
@@ -206,7 +211,12 @@ export function CartProducts() {
             <TableRow>
               <TableCell align="left">
                 <Button className={classes.buttonFinal} variant="contained">
-                  <Typography variant="button">Finalizar Pedido</Typography>
+                  <Typography
+                    onClick={() => handleNavigationToPage("/paymentForm")}
+                    variant="button"
+                  >
+                    Finalizar Pedido
+                  </Typography>
                 </Button>
               </TableCell>
               <TableCell align="right">
