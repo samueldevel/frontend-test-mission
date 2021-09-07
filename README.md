@@ -8,6 +8,8 @@ In the project directory, you can run:
 
 ### `yarn run api`
 
+## `/api`
+
 Runs the api in http://localhost:3001/products/
 
 ### `yarn start`
