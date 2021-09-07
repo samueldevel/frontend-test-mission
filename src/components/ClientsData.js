@@ -33,7 +33,7 @@ export function ClientsData() {
   function onSubmit(values) {
     setCart([]);
     localStorage.removeItem("@DevMart:cart");
-    alert("COMPRA FEITA COM SUCESSO, VOLTE SEMPRE!");
+    alert("COMPRA FEITA COM SUCESSO, VOLTE SEMPRE!!");
     history.push("/");
   }
 
