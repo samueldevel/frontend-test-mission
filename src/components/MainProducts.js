@@ -69,11 +69,12 @@ const useStyles = makeStyles((theme) => ({
 export function MainProducts() {
   const classes = useStyles();
   const { products } = useProduct();
-  const { addProduct } = useCart();
+  const { addProduct, cart } = useCart();
   const { openModal } = useModal();
 
   function handleOpenModal(productId) {
     openModal(productId);
+    console.log(cart);
   }
 
   function handleTitleProduct(product) {
@@ -86,6 +87,7 @@ export function MainProducts() {
 
   function handleAddProduct(id) {
     addProduct(id);
+    console.log(cart);
   }
 
   return (

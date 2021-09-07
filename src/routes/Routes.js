@@ -12,9 +12,9 @@ export function Routes() {
     <BrowserRouter>
       <Route path="/" exact component={Home} />
       <Route path="/" component={MenuBar} />
-      <PrivateRoute path="/cart" component={CartPage} />
       <Route path="/" component={ModalProducts} />
-      <Route path="/paymentForm" component={PaymentForm} />
+      <PrivateRoute path="/cart" component={CartPage} />
+      <PrivateRoute path="/paymentForm" component={PaymentForm} />
     </BrowserRouter>
   );
 }

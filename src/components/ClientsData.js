@@ -31,9 +31,10 @@ export function ClientsData() {
   const { setCart } = useCart();
 
   function onSubmit(values) {
-    history.push("/");
     setCart([]);
+    localStorage.removeItem("@DevMart:cart");
     alert("COMPRA FEITA COM SUCESSO, VOLTE SEMPRE!");
+    history.push("/");
   }
 
   return (
