@@ -4,13 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+
+## in the api directory, you can run: 
 
 ### `yarn run api`
 
-## `/api`
-
 Runs the api in http://localhost:3001/products/
+
+In the project directory, you can run:
 
 ### `yarn start`
 
