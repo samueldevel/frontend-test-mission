@@ -41,9 +41,9 @@ export default Yup.object().shape({
   name: Yup.string().min(3).required(),
   email: Yup.string().email().required(),
   cpf: Yup.string().min(11).required(),
-  endereco: Yup.string().required(),
+  endereco: Yup.string().min(2).required(),
   cep: Yup.string().min(8).required(),
-  rua: Yup.string().required(),
-  bairro: Yup.string().required(),
+  rua: Yup.string().min(2).required(),
+  bairro: Yup.string().min(2).required(),
   numero: Yup.number().positive().integer().required(),
 });

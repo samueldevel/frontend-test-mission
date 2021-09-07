@@ -2,6 +2,8 @@ import { Formik, Form } from "formik";
 
 import { useHistory } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 import { makeStyles } from "@material-ui/styles";
 import {
   Box,
@@ -33,8 +35,12 @@ export function ClientsData() {
   function onSubmit(values) {
     setCart([]);
     localStorage.removeItem("@DevMart:cart");
-    alert("COMPRA FEITA COM SUCESSO, VOLTE SEMPRE!!");
     history.push("/");
+    toast.success("Compra feita com successo, Volte Sempre!!", {
+      position: toast.POSITION.TOP_CENTER,
+      theme: "dark",
+      style: { width: 400, height: 100 },
+    });
   }
 
   return (

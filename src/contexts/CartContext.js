@@ -1,5 +1,7 @@
 import axios from "axios";
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const CartContext = createContext({});
 
@@ -60,10 +62,14 @@ export function CartProvider(props) {
               },
             ])
           );
-          console.log("item colocado no carrinho com sucesso");
+          toast.success("item colocado no carrinho com sucesso", {
+            position: toast.POSITION.TOP_LEFT,
+          });
           return;
         } else {
-          console.log("Quantidade solicitada excede o extoque");
+          toast.error("Quantidade solicitada excede o extoque", {
+            position: toast.POSITION.TOP_LEFT,
+          });
         }
       }
 
@@ -85,19 +91,27 @@ export function CartProvider(props) {
           );
 
           if (!productExists) {
-            console.log("erro na alteração da quantidade do produto");
+            toast.error("erro na alteração da quantidade do produto", {
+              position: toast.POSITION.TOP_LEFT,
+            });
             return;
           }
           setCart(updatedCart);
           localStorage.setItem("@DevMart:cart", JSON.stringify(updatedCart));
-          console.log("item colocado no carrinho com sucesso");
+          toast.success("item colocado no carrinho com sucesso", {
+            position: toast.POSITION.TOP_LEFT,
+          });
           return;
         } else {
-          console.log("Quantidade solicitada excede o extoque");
+          toast.error("Quantidade solicitada excede o extoque", {
+            position: toast.POSITION.TOP_LEFT,
+          });
         }
       }
     } catch {
-      console.error("Erro na remoção do produto");
+      toast.error("Erro na remoção do produto", {
+        position: toast.POSITION.TOP_LEFT,
+      });
     }
   }
 
@@ -108,7 +122,9 @@ export function CartProvider(props) {
       );
 
       if (!productExists) {
-        console.log("Não foi possivel encontrar o produto");
+        toast.error("Não foi possivel encontrar o produto", {
+          position: toast.POSITION.TOP_LEFT,
+        });
         return;
       }
 
@@ -117,7 +133,9 @@ export function CartProvider(props) {
       setCart(updatedCart);
       localStorage.setItem("@DevMart:cart", JSON.stringify(updatedCart));
     } catch {
-      console.log("Erro na remoção do produto");
+      toast.error("Erro na remoção do produto", {
+        position: toast.POSITION.TOP_LEFT,
+      });
     }
   }
 
@@ -128,7 +146,9 @@ export function CartProvider(props) {
       );
 
       if (quantity < 1) {
-        console.log("erro na alteração da quantidade do produto");
+        toast.error("erro na alteração da quantidade do produto", {
+          position: toast.POSITION.TOP_LEFT,
+        });
         return;
       }
 
@@ -136,7 +156,9 @@ export function CartProvider(props) {
       const stockIsAvailable = quantity <= productQuantity;
 
       if (!stockIsAvailable) {
-        console.log("Quantidade solicitada fora do estoque");
+        toast.error("Quantidade solicitada fora do estoque", {
+          position: toast.POSITION.TOP_LEFT,
+        });
         return;
       }
 
@@ -145,7 +167,9 @@ export function CartProvider(props) {
       );
 
       if (!productExists) {
-        console.log("Erro na alteração de quantidade do produto");
+        toast.error("Erro na alteração de quantidade do produto", {
+          position: toast.POSITION.TOP_LEFT,
+        });
       }
 
       const updatedCart = cart.map((cartItem) =>
@@ -160,7 +184,9 @@ export function CartProvider(props) {
       setCart(updatedCart);
       localStorage.setItem("@DevMart:cart", JSON.stringify(updatedCart));
     } catch (e) {
-      console.log(e);
+      toast.error("erro ao atualizar o produto", {
+        position: toast.POSITION.TOP_LEFT,
+      });
     }
   }
 

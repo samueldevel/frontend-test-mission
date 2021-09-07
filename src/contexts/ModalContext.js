@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const ModalContext = createContext({});
 
@@ -24,8 +25,10 @@ export function ModalProvider(props) {
       setModal([{ ...product }]);
       setOpen(true);
       localStorage.setItem("@DevMart:modal", JSON.stringify([{ ...product }]));
-    } catch (e) {
-      console.log(e);
+    } catch {
+      toast.error("Erro ao abrir o modal", {
+        position: toast.POSITION.TOP_LEFT,
+      });
     }
   }
 

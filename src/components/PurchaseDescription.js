@@ -8,6 +8,7 @@ import {
   TableRow,
   TableCell,
   TableBody,
+  TableFooter,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
@@ -103,7 +104,7 @@ export function PurchaseDescription() {
       </TableContainer>
       <TableContainer className={classes.container2}>
         <Table stickyHeader>
-          <TableHead>
+          <TableFooter>
             <TableRow>
               <TableCell align="right">
                 <Typography style={{ fontSize: 20 }}>TOTAL:</Typography>
@@ -116,7 +117,7 @@ export function PurchaseDescription() {
                 </Typography>
               </TableCell>
             </TableRow>
-          </TableHead>
+          </TableFooter>
         </Table>
       </TableContainer>
     </Grid>

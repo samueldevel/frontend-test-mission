@@ -1,5 +1,4 @@
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
-import { useCart } from "../hooks/useCart";
+import { Route, Redirect } from "react-router-dom";
 
 export function PrivateRoute({ component: Component, ...rest }) {
   return (

@@ -74,7 +74,6 @@ export function MainProducts() {
 
   function handleOpenModal(productId) {
     openModal(productId);
-    console.log(cart);
   }
 
   function handleTitleProduct(product) {
@@ -87,7 +86,6 @@ export function MainProducts() {
 
   function handleAddProduct(id) {
     addProduct(id);
-    console.log(cart);
   }
 
   return (

@@ -83,7 +83,6 @@ export function CartProducts() {
 
   function handleProductIncrement(product) {
     updateProductQuantity(product.id, product.quantity + 1);
-    console.log();
   }
 
   function handleProductDecrement(product) {
