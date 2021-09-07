@@ -4,8 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-
-## in the api directory, you can run: 
+## in the api directory, you can run:
 
 ### `yarn run api`
 
@@ -21,57 +20,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+## missão feita por Samuel Elias
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A missão
+Carrinho de Compras
+Seu objetivo é montar um carrinho de compras simples, conforme o prototipo a seguir:
 
-### `yarn build`
+O layout deve ser como de um site de vendas convencional, com uma listagem de produtos, e um icone de carrinho de compras no topo do site.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+O icone do carrinho de compras deve exibir uma badge com a quantidade de itens presente no carrinho.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A tela de listagem de produtos deve:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Listar produtos Ao entrar no projeto, deve exibir os produtos na listagem com foto, titulo e preço formatado em reais; Ao clicar no produto da lista, deve exibir os detalhes de um produto individual; Permitir comprar Ao clicar em comprar, e o produto não estiver no carrinho, deve ser adicionado; Ao clicar em comprar, e o produto ja existir no carrinho, deve ser incrementado em 1; Exibir resumo do carrinho Exibir no icone do carrinho uma badge com quantidade de itens; Exibir ao lado do icone, o valor total da compra; O carrinho deve:
 
-### `yarn eject`
+Permitir remover itens; Ao remover, liberar o estoque do produto; Permitir alterar a quantidade de um item; Ao clicar em aumentar, deve incrementar em 1; Ao clicar em diminuir, deve decrementar em 1; Ao incrementar, deve validar se o produto ainda possui estoque; Ao decrementar, deve liberar o estoque do produto; Não deve permitir o usuário informar quantidade zero; Exibir o somatório total dos itens incluidos; A finalização do pedido deve:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Ter um formulário de finalização com os seguintes campos e validação: Nome Email CPF Endereço Cep Rua Bairro Número Serviço Rest
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Que força esteja com você
