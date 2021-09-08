@@ -19,7 +19,7 @@ export function ModalProvider(props) {
   async function openModal(productId) {
     try {
       const { data: product } = await axios.get(
-        `http://localhost:8080/products/${productId}`
+        `https://devmart-api.herokuapp.com/products/${productId}`
       );
 
       setModal([{ ...product }]);
