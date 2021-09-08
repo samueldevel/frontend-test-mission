@@ -19,7 +19,7 @@ export function CartProvider(props) {
   async function addProduct(productId) {
     try {
       const { data: product } = await axios.get(
-        `http://localhost:3001/products/${productId}`
+        `http://localhost:8080/products/${productId}`
       );
 
       const productAlreadyInCart = cart.find(
@@ -142,7 +142,7 @@ export function CartProvider(props) {
   async function updateProductQuantity(productId, quantity) {
     try {
       const { data: product } = await axios.get(
-        `http://localhost:3001/products/${productId}`
+        `http://localhost:8080/products/${productId}`
       );
 
       if (quantity < 1) {

@@ -8,7 +8,7 @@ export const ProductContext = createContext({});
 export function ProductProvider(props) {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3001/products").then((response) => {
+    axios.get("http://localhost:8080/products").then((response) => {
       const productFormatted = response.data.map((product) => {
         return {
           ...product,

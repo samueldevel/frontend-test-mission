@@ -86,6 +86,7 @@ export function MainProducts() {
 
   function handleAddProduct(id) {
     addProduct(id);
+    console.log(products);
   }
 
   return (
